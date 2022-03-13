@@ -1,0 +1,3 @@
+[submodule "Graafsite_frontend"]
+	path = site
+	url = ../Graadsite_frontend.git
