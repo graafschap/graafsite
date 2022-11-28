@@ -6,6 +6,7 @@ import { BannerComponent } from './banner/banner.component';
 import { WelkomComponent } from './welkom/welkom.component';
 import { GraafschapTileComponent } from './component/graafschap-tile/graafschap-tile.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ContentTileComponent } from './content-tile/content-tile.component';
 
 @NgModule({
   declarations: [
