@@ -2280,13 +2280,13 @@
 				display: block;
 			}
 
-			.box.features .features-row section {
+			.box.features .features-row  section {
 				float: left;
 				padding: 3em;
 				width: 50%;
 			}
 
-				.box.features .features-row section :last-child {
+				.box.features .features-row section:last-child {
 					margin-bottom: 0;
 				}
 
@@ -2305,7 +2305,7 @@
 						width: 2px;
 					}
 
-				.box.features .features-row section:nth-child(2n-1) {
+				.box.features .features-row  section:nth-child(2n-1) {
 					padding-left: 0;
 				}
 
