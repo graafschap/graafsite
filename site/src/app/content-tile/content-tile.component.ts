@@ -1,4 +1,3 @@
-import { toBase64String } from '@angular/compiler/src/output/source_map';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
