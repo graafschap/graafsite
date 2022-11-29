@@ -15,4 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build site/. --file Dockerfile --tag graafschap:$(date +%s)
+      working-directory: site
+      run: docker build . --file Dockerfile --tag graafschap:$(date +%s)
