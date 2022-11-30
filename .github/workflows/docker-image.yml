@@ -15,5 +15,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      working-directory: site
+      working-directory: site      
       run: docker build . --file Dockerfile --tag graafschap:$(date +%s)
+    - name: 'Build:dockerimage'
+      uses: docker/build-push-action@v3
+      with:
+        registry: ghcr.io
+        username: "defjef1979"
+        password: ${{ secrets.PAT }}
+        repository: defjef1979/graafsite
+        tags: latest
