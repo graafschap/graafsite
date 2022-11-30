@@ -31,4 +31,4 @@ jobs:
         registry: ${{ env.REGISTRY }}
         context: site 
         push: true
-        tags: defjef1979/graafschap:0.1,defjef1979/graafsite:latest
+        tags: ${{ env.REGISTRY }}/defjef1979/graafschap
