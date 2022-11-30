@@ -18,9 +18,9 @@ jobs:
     - name: 'Build:dockerimage'
       uses: docker/build-push-action@v3     
       with:
-        working-directory: site 
+        context: site 
         registry: ghcr.io
         username: "defjef1979"
         password: ${{ secrets.PAT }}
         repository: defjef1979/graafsite
-        tags: latest
+        tags: defjef1979/graafschap:0.1,defjef1979/graafsite:latest
