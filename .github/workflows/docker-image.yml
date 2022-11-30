@@ -28,10 +28,9 @@ jobs:
     - name: 'Build:dockerimage'
       uses: docker/build-push-action@v3     
       with:
+        builder: ${{ steps.buildx.outputs.name }}
         context: site 
-        push: true
+        push: ${{ github.event_name != 'pull_request' }}
         registry: ghcr.io
-        username: "defjef1979"
-        password: ${{ github.repository_owner }}
         repository: defjef1979/graafsite
         tags: defjef1979/graafschap:0.1,defjef1979/graafsite:latest
