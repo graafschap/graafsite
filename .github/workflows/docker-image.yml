@@ -24,14 +24,10 @@ jobs:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
         password: ${{ secrets.TOKEN }}       
-    
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
 
     - name: 'Build:dockerimage'
       uses: docker/build-push-action@v3     
       with:
-        builder: ${{ steps.buildx.outputs.name }}
         registry: ${{ env.REGISTRY }}
         context: site 
         push: true
