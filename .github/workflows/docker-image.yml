@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "master" ]
 
+env:
+  REGISTRY: ghcr.io
+  
 jobs:
 
   build:
@@ -30,7 +33,5 @@ jobs:
       with:
         builder: ${{ steps.buildx.outputs.name }}
         context: site 
-        push: ${{ github.event_name != 'pull_request' }}
-        registry: ghcr.io
-        repository: defjef1979/graafsite
+        push: true
         tags: defjef1979/graafschap:0.1,defjef1979/graafsite:latest
