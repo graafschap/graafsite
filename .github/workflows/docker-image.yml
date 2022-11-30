@@ -21,7 +21,7 @@ jobs:
 
     - uses: docker/login-action@v2
       with:
-        registry: ghcr.io
+        registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
         password: ${{ secrets.TOKEN }}       
     
@@ -32,6 +32,7 @@ jobs:
       uses: docker/build-push-action@v3     
       with:
         builder: ${{ steps.buildx.outputs.name }}
+        registry: ${{ env.REGISTRY }}
         context: site 
         push: true
         tags: defjef1979/graafschap:0.1,defjef1979/graafsite:latest
