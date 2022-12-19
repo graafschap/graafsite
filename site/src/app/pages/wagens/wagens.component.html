@@ -1,0 +1,16 @@
+<section id="rides_background" >
+</section>
+<section class="container">
+    <div id="rides_header">
+        <h2>Wagen overzicht</h2>
+        <div id="rides_content">
+            <mat-list role="list">                
+                <mat-list-item *ngFor="let ride of rides"  role="listitem">
+                    <img matListItemAvatar src="{{ride.photo[0]}}" width="150px" />
+                    <div matListItemTitle>{{ride.title}}</div>
+                    <div matlistItemLine>Plaats: {{ride.place}} | Punten: {{ride.points}}</div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,27 @@
+#rides_background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+    background-image: url(../../../assets/images/corso2020.jpg);
+ 
+    filter: grayscale(100%);
+}
+
+#rides_header {
+    margin-top: 45px;
+    padding: 5px;
+    height: 50em;
+    background-color: rgba(0,0,0,.5);
+    h2 {
+        text-align: center;
+        color: #fff        
+    }
+    #rides_content{
+        background-color: #fff;
+        height: 80%;
+        overflow-y: auto;
+    }
+}
