@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router, CanActivate } from '@angular/router';
 import { KeycloakAuthGuard, KeycloakService } from 'keycloak-angular';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard extends KeycloakAuthGuard {
+export class AuthGuard extends KeycloakAuthGuard implements CanActivate{
   
   constructor(
     protected override readonly router: Router,
@@ -26,4 +26,14 @@ export class AuthGuard extends KeycloakAuthGuard {
 
     return this.authenticated;
   }
+
+  public override async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean | UrlTree> {
+    if(await this.keycloak.isLoggedIn()){
+        return true;
+    }
+    else {
+        console.log("Nope can not activate")
+        return false;
+    }
+}
 }
